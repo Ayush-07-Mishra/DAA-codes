@@ -10,10 +10,10 @@ using namespace std;
 void floydWarshall(vector<vector<int> >& graph, int n) {
     vector<vector<int> > dist = graph;
 
-    for (int k = 0; k < n; k++) { // this is the via that the intermidiate we are going
-        for (int i = 0; i < n; i++) {
+    for (int k = 0; k < n; k++) { // this is the via that the intermidiate we are going through
+        for (int i = 0; i < n; i++) { // going to the 2D matrix
             for (int j = 0; j < n; j++) {
-                if (dist[i][k] != INF && dist[k][j] != INF && dist[i][k] + dist[k][j] < dist[i][j]) {
+                if (dist[i][k] != INF && dist[k][j] != INF && dist[i][k] + dist[k][j] < dist[i][j]) { // min(cost[i][j] , cost[i][via] + cost[via][j])
                     dist[i][j] = dist[i][k] + dist[k][j];
                 }
             }
