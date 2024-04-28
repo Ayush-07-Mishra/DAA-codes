@@ -64,7 +64,6 @@ int main() {
     int n;
     cout << "Enter the number of line segments: ";
     cin >> n;
-
     vector<LineSegment> segments(n);
     cout << "Enter the starting and ending points of all line segments:\n";
     for (int i = 0; i < n; ++i) {

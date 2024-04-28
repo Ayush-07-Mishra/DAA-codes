@@ -31,7 +31,6 @@ long long karatsuba(long long a, long long b) {
     long long z2 = karatsuba(aH, bH);
     long long z1 = karatsuba(aH + aL, bH + bL) - z2 - z0;
 
-
     return (z2 * (long long)pow(10, 2 * m)) + (z1 * (long long)pow(10, m)) + z0;
 }
 
