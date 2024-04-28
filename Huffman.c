@@ -10,10 +10,6 @@ struct HuffmanNode {
 
 struct HuffmanNode* createNode(char data, unsigned frequency) {
     struct HuffmanNode* node = (struct HuffmanNode*)malloc(sizeof(struct HuffmanNode));
-    if (node == NULL) {
-        printf("Memory allocation failed.\n");
-        exit(EXIT_FAILURE);
-    }
     node->data = data;
     node->frequency = frequency;
     node->left = NULL;
@@ -23,11 +19,7 @@ struct HuffmanNode* createNode(char data, unsigned frequency) {
 
 struct HuffmanNode* buildHuffmanTree(char data[], unsigned frequency[], int size) {
     struct HuffmanNode** nodes = (struct HuffmanNode**)malloc(size * sizeof(struct HuffmanNode*));
-    if (nodes == NULL) {
-        printf("Memory allocation failed.\n");
-        exit(EXIT_FAILURE);
-    }
-
+    
     for (int i = 0; i < size; i++) {
         nodes[i] = createNode(data[i], frequency[i]);
     }

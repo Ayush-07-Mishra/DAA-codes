@@ -23,6 +23,7 @@ struct HuffmanNode* buildHuffmanTree(char data[], unsigned frequency[], int size
     for(int i = 0; i < size; i++) {
         nodes[i] = createNode(data[i], frequency[i]);
     }
+    while(size > 1){
     for(int i = 0; i < size - 1; i++) {
         for(int j = i + 1; j < size; j++) {
             if(nodes[i]->frequency > nodes[j]->frequency) {
@@ -33,7 +34,7 @@ struct HuffmanNode* buildHuffmanTree(char data[], unsigned frequency[], int size
         }
     }
 
-    while (size > 1) {
+    
         struct HuffmanNode* newnode = createNode('$' ,nodes[0]->frequency + nodes[1]->frequency);
         newnode->left = nodes[0];
         newnode->right = nodes[1];
@@ -45,7 +46,9 @@ struct HuffmanNode* buildHuffmanTree(char data[], unsigned frequency[], int size
         }
 
         size--;
+    
     }
+
     struct HuffmanNode* root = nodes[0];
     free(nodes);
     

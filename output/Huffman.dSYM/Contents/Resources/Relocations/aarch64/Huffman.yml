@@ -2,9 +2,9 @@
 triple:          'arm64-apple-darwin'
 binary-path:     '/Users/ayushmishra/Desktop/practice_coding/output/Huffman'
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _createNode, symObjAddr: 0x0, symBinAddr: 0x100003A50, symSize: 0x80 }
-  - { offsetInCU: 0x8B, offset: 0x8B, size: 0x8, addend: 0x0, symName: _createNode, symObjAddr: 0x0, symBinAddr: 0x100003A50, symSize: 0x80 }
-  - { offsetInCU: 0xCF, offset: 0xCF, size: 0x8, addend: 0x0, symName: _buildHuffmanTree, symObjAddr: 0x80, symBinAddr: 0x100003AD0, symSize: 0x244 }
-  - { offsetInCU: 0x19F, offset: 0x19F, size: 0x8, addend: 0x0, symName: _generateHuffmanCodes, symObjAddr: 0x2C4, symBinAddr: 0x100003D14, symSize: 0xEC }
-  - { offsetInCU: 0x1DF, offset: 0x1DF, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x3B0, symBinAddr: 0x100003E00, symSize: 0x118 }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _createNode, symObjAddr: 0x0, symBinAddr: 0x100003AC8, symSize: 0x58 }
+  - { offsetInCU: 0x8B, offset: 0x8B, size: 0x8, addend: 0x0, symName: _createNode, symObjAddr: 0x0, symBinAddr: 0x100003AC8, symSize: 0x58 }
+  - { offsetInCU: 0xCF, offset: 0xCF, size: 0x8, addend: 0x0, symName: _buildHuffmanTree, symObjAddr: 0x58, symBinAddr: 0x100003B20, symSize: 0x21C }
+  - { offsetInCU: 0x19F, offset: 0x19F, size: 0x8, addend: 0x0, symName: _generateHuffmanCodes, symObjAddr: 0x274, symBinAddr: 0x100003D3C, symSize: 0xEC }
+  - { offsetInCU: 0x1DF, offset: 0x1DF, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x360, symBinAddr: 0x100003E28, symSize: 0x118 }
 ...
