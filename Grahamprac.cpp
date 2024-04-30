@@ -16,9 +16,9 @@ int distSq(Point p1, Point p2) {
            (p1.y - p2.y) * (p1.y - p2.y);
 }
 int orientation(Point p, Point q, Point r) {
-    int val = (q.y - p.y) * (r.x - q.x) -
+    int val = 
+(q.y - p.y) * (r.x - q.x) -
               (q.x - p.x) * (r.y - q.y);
-
     if (val == 0) return 0;  // Collinear
     return (val > 0) ? 1 : 2; // Clockwise or Counterclockwise
 }

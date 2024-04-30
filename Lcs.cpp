@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int longest_common_subsequence_length(const string& seq1, const string& seq2) {
+pair<int , string>longest_common_subsequence_length(const string& seq1, const string& seq2) {
     int m = seq1.length();
     int n = seq2.length();
 
@@ -21,15 +21,32 @@ int longest_common_subsequence_length(const string& seq1, const string& seq2) {
             }
         }
     }
+
+    string lcs;
+    int i = m;
+    int j = n;
+    while(i > 0 && j > 0){
+        if(seq1[i-1] == seq2[j-1]){
+            lcs = seq1[i-1]+ lcs;
+            i--;
+            j--;
+        }else if(dp[i-1][j] > dp[i][j-1]){
+            i--;
+        }else{
+            j--;
+        }
+    }
     // Length of the LCS
-    return dp[m][n];
+    return make_pair(dp[m][n],lcs);
 }
 
 int main() {
-    string seq1 = "AGGTAB";
-    string seq2 = "GXTXAYB";
+    string seq1 = "longest";
+    string seq2 = "stone";
 
-    cout << "Length of Longest Common Subsequence: " << longest_common_subsequence_length(seq1, seq2) << endl;
+    pair<int,string> result = longest_common_subsequence_length(seq1, seq2);
+    cout << result.first << endl;
+    cout << result.second << endl;
 
     return 0;
 }

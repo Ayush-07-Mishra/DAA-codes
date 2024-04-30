@@ -12,12 +12,6 @@ struct LineSegment {
     Point p1, p2;
 };
 
-bool sortByX(const Point &a, const Point &b) {
-    if (a.x == b.x)
-        return a.y < b.y;
-    return a.x < b.x;
-}
-
 int orientation(Point p, Point q, Point r) {
     int val = (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y);
     if (val == 0) return 0;
@@ -50,8 +44,8 @@ bool doIntersect(LineSegment s1, LineSegment s2) {
 
 int countIntersections(vector<LineSegment> segments) {
     int count = 0;
-    for (size_t i = 0; i < segments.size(); ++i) {
-        for (size_t j = i + 1; j < segments.size(); ++j) {
+    for (int i = 0; i < segments.size(); ++i) {
+        for (int j = i + 1; j < segments.size(); ++j) {
             if (doIntersect(segments[i], segments[j]))
                 count++;
         }
