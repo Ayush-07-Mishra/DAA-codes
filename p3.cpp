@@ -8,7 +8,6 @@ int length(long long num){
     while(num>0){
         num/= 10;
         len++;
-
     }
     return len;
 }

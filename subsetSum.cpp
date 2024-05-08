@@ -18,6 +18,7 @@ void printSubsetSum(vector<int>& arr, int n, int sum, vector<int>& subset, int i
     printSubsetSum(arr, n - 1, sum, subset, index);
 }
 
+
 int main() {
     int n = 4;
     // cin >> n;

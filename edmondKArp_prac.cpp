@@ -30,7 +30,6 @@ bool bfs(node vert[],node source,node sink){
     while(!q.empty()){
         u = q.front();
         q.pop();
-
         for(int i =0;i<n;i++){
             if(res[u.id][i] != 0 && vert[i].status == 0){
                 q.push(vert[i]);
