@@ -69,7 +69,6 @@ void printHuffmanCodes(struct HuffmanNode* root ,char code[],int depth){
     code[depth] ='1';
     printHuffmanCodes(root->right,code,depth + 1);
 }
-
 int main(){
     char data[] = {'a', 'b', 'c', 'd', 'e', 'f'};
     unsigned frequency[] = {5, 9, 12, 13, 16, 45};
