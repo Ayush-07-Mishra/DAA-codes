@@ -20,6 +20,8 @@ int main(){
     Cookie* cookieOne = new Cookie("green");
     Cookie* cookieTwo = new Cookie("blue");
 
+    cookieOne->setColor("yellow");
+    
     cout << "C1 : "<< cookieOne->getColor() << endl;
     cout << "C2 : "<< cookieTwo->getColor() << endl;
 }
