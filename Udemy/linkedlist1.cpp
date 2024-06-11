@@ -163,7 +163,7 @@ public:
         if(index == 0){
             deletefirst();
             return;
-        }if(index == length){
+        }if(index == length - 1){
             deletelast();
             return;
         }
@@ -172,7 +172,7 @@ public:
         temp->next = current->next;
         delete current;
         length--;
-        
+
     }
 
     ~LinkedList() {
