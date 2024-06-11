@@ -175,6 +175,23 @@ public:
 
     }
 
+    void reverse(){
+        Node* temp = head;
+        head = tail;
+        tail = temp;
+
+        Node* after = temp->next;
+        Node* before = nullptr;
+
+        for(int i=0;i<length;i++){
+            after = temp->next;
+            temp->next = before;
+            before = temp;
+            temp = after;
+        }
+
+    }
+
     ~LinkedList() {
         Node* temp = head;
         while (head) { // head != nullptr
@@ -208,6 +225,8 @@ int main() {
     myLinkedList->printList();
 
     cout << "the value at index 1 is "<< myLinkedList->get(1)->value<< endl;
-
+    myLinkedList->reverse();
+    
+    myLinkedList->printList();
     delete myLinkedList; // Clean up the allocated memory
 }
