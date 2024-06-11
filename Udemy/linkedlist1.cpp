@@ -76,6 +76,8 @@ class LinkedList {
             length++;
         }
 
+        void delete()
+
 };
 
 
