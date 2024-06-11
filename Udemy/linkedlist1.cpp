@@ -120,6 +120,61 @@ public:
         length++;
     }
 
+    Node* get(int index){
+        if(index < 0 || index >= length){
+            return nullptr;
+        }
+        Node* temp = head;
+        for(int i =0;i<index;i++){
+            temp = temp->next;
+        }
+        return temp;
+    }
+
+    bool set(int index, int value) {
+        Node* temp = get(index);
+        if (temp) {
+            temp->value = value;
+            return true;
+        } 
+        return false;
+    }
+
+    bool insert(int index,int value){
+        if(index < 0 || index >= length) return false;
+        if(index == 0){
+            prepend(value);
+            return true;
+        }
+        if(index == length){
+            append(value);
+            return true;
+        }
+        Node* newNode = new Node(value);
+        Node* temp = get(index - 1);
+        newNode->next = temp->next;
+        temp->next = newNode;
+        length++;
+        return true;
+    }
+
+    void deleteindex(int index){
+        if(index < 0 || index > length) return;
+        if(index == 0){
+            deletefirst();
+            return;
+        }if(index == length){
+            deletelast();
+            return;
+        }
+        Node* temp = get(index-1);
+        Node* current = get(index);
+        temp->next = current->next;
+        delete current;
+        length--;
+        
+    }
+
     ~LinkedList() {
         Node* temp = head;
         while (head) { // head != nullptr
@@ -151,6 +206,8 @@ int main() {
 
     cout << "The linked list after deleting the last node is:" << endl;
     myLinkedList->printList();
+
+    cout << "the value at index 1 is "<< myLinkedList->get(1)->value<< endl;
 
     delete myLinkedList; // Clean up the allocated memory
 }
