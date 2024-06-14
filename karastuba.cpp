@@ -1,8 +1,6 @@
 #include <iostream>
 #include <cmath>
-
 using namespace std;
-
 
 int length(long long num) {
     int len = 0;
