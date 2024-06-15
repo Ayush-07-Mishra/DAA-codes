@@ -48,6 +48,7 @@ class DoublyLinkedList{
     }
 
     void append(int value){
+        Node* newNode = new Node(value);
         
     }
 };
