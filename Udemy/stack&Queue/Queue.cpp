@@ -47,12 +47,48 @@ class Queue{
 
         void Enqueue(int value){
             Node* newNode = new Node(value);
+            if(length == 0){
+                first = newNode;
+                last = newNode;
+            }else{
+                last->next = newNode;
+                last = newNode;
+            }
+            length++;
+        }
+
+        int Dequeue(){
+            Node* temp = first;
+            if(length == 0){
+                return INT_MIN;
+            }if(length == 1){
+                first == nullptr;
+                last == nullptr;
+            }else{
+               first = first->next; 
+            }
+            return temp->value;
+            length--;
+            delete temp;
+                
             
         }
 
 };
 int main(){
     Queue* myQ = new Queue(7);
+    myQ->getFirst();
+    myQ->getLast();
+    myQ->getLength();
+    myQ->printQueue();
+    myQ->Enqueue(1);
+    myQ->Enqueue(4);
+    myQ->Enqueue(2);
+    myQ->getFirst();
+    myQ->getLast();
+    myQ->getLength();
+    myQ->printQueue();
+    myQ->Dequeue();
     myQ->getFirst();
     myQ->getLast();
     myQ->getLength();
