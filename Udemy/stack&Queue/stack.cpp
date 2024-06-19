@@ -56,8 +56,16 @@ class Stack{
             return;
         }
 
-        void pop(){
-            
+        int pop(){
+            if(height == 0){
+                return INT_MIN; // important 
+            }
+            Node* temp = top;
+            int popedvalue = top->value;
+            top = top->next;
+            delete temp;
+            height --;
+            return popedvalue;
         }
 };
 
@@ -70,6 +78,7 @@ int main(){
     mystk->push(2);
     mystk->getTop();
     mystk->getHeight();
+    mystk->pop();
     mystk->printStack();
 
 }
