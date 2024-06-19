@@ -69,11 +69,8 @@ class Queue{
             }
             return temp->value;
             length--;
-            delete temp;
-                
-            
+            delete temp;    
         }
-
 };
 int main(){
     Queue* myQ = new Queue(7);
