@@ -11,6 +11,8 @@ vector<int> spiralmatrix(vector<vector<int> >&mat){
         for(int i = left; i <= right;i++){
             cout << a[top][i] << endl;
         }
+
+        
         top++;
 
         //down 

@@ -8,10 +8,8 @@ using namespace std;
 int assemblyLineScheduling(vector<vector<int> >& a, vector<vector<int> >& t, vector<int>& e, vector<int>& x) {
     int n = a[0].size();
     vector<int> f1(n), f2(n);
-
     f1[0] = e[0] + a[0][0]; 
     f2[0] = e[1] + a[1][0]; 
-
     for (int i = 1; i < n; ++i) {
         f1[i] = min(f1[i - 1] + a[0][i], f2[i - 1] + t[1][i] + a[0][i]);
         f2[i] = min(f2[i - 1] + a[1][i], f1[i - 1] + t[0][i] + a[1][i]);
@@ -41,7 +39,7 @@ int main() {
     t[1][3] = 8; // Transfer time between stations
 
     vector<int> e(2);
-    e[0] = 10;
+    e[0] = 10;// Entry time for each line;
     e[1] = 12; // Entry time for each line
 
     vector<int> x(2); 
