@@ -46,10 +46,24 @@ public:
                     }
                     temp = temp->right;
                 }
-
-
             }
         }
+    }
+
+    bool contains(int value) {
+        Node* temp = root;
+
+        while (temp != nullptr) {
+            if (value == temp->value) {
+                return true;
+            } else if (value < temp->value) {
+                temp = temp->left;
+            } else {
+                temp = temp->right;
+            }
+        }
+
+        return false;
     }
 };
 
@@ -63,6 +77,9 @@ int main() {
     cout << "root : " << bst->root->value << endl;
     cout << "left : "<<bst->root->left->value << endl;
     cout << "right : "<< bst->root->right->value << endl;
+
+    cout << bst->contains(2) << endl;
+    cout << bst->contains(4) << endl;
 
     delete bst;
 
